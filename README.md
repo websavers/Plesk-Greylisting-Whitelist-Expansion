@@ -12,7 +12,7 @@ MY_DOMAIN is set to the domain that your SMTP server(s) use. Then run:
 
 # Customization
 You may wish to customize by adding your own entries to the whitelist. We analyze
-our server mail logs for 451 errors like this: `tail -f /var/log/maillog | grep 451`
+our server mail logs for 451 errors like this: `grep "451 4.7.1" /var/log/maillog | more`
 And use the results to find common legit mail servers to whitelist by adding to 
 CUSTOM_DOMAINS array
 
