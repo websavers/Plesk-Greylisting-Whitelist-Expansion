@@ -12,7 +12,8 @@ MY_SMTP is set to your SMTP server(s). Then run: `./plesk_add_to_greylist_whitel
 # Customization
 You may wish to customize by adding your own entries to the whitelist. We analyze
 the maillog for 451 errors like this: `tail -f /var/log/maillog | grep 451`
-And use the results to find common legit mail servers to whitelist
+And use the results to find common legit mail servers to whitelist by adding to 
+CUSTOM_DOMAINS array
 
 # Changelog
  2019-02-22
