@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MY_SMTP="*.websavers.ca"
+MY_SMTP="websavers.ca"
 
 ## Usage ##
 # ./plesk_add_to_greylist_whitelist.sh
