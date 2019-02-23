@@ -1,6 +1,12 @@
 #!/bin/bash
 
-MY_SMTP="websavers.ca"
+MY_DOMAIN="websavers.ca"
+#MailChimp: mail249.sea81.mcsv.net
+#Asana: mail.asana.com
+#Kijiji: rts.kijiji.ca
+#BestBuy: mta.communications.bestbuypromotions.ca
+#Eastlink: mta03.eastlink.ca
+CUSTOM_DOMAINS=(mcsv.net asana.com kijiji.ca communications.bestbuypromotions.ca eastlink.ca)
 
 ## Usage ##
 # ./plesk_add_to_greylist_whitelist.sh
@@ -16,8 +22,10 @@ if [ ! -f $WHITELIST_FILE ]; then
 fi
 
 # Append our own custom white list entries to file
-echo "mail.asana.com" >> $WHITELIST_FILE
-echo $MY_SMTP >> $WHITELIST_FILE
+for domain in ${CUSTOM_DOMAINS[@]}; do
+  echo ${domain} >> $WHITELIST_FILE 
+done
+echo $MY_DOMAIN >> $WHITELIST_FILE
 
 # Save non-comment lines of file to var
 WHITELIST=$(sed '/^ *#/d;s/#.*//' $WHITELIST_FILE)
