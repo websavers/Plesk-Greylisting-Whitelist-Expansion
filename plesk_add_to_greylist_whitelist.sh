@@ -2,11 +2,8 @@
 
 MY_DOMAIN="websavers.ca"
 #MailChimp: mail249.sea81.mcsv.net
-#Asana: mail.asana.com
-#Kijiji: rts.kijiji.ca
-#BestBuy: mta.communications.bestbuypromotions.ca
 #Eastlink: mta03.eastlink.ca
-CUSTOM_DOMAINS=(mcsv.net asana.com kijiji.ca communications.bestbuypromotions.ca eastlink.ca)
+CUSTOM_DOMAINS=(mandrillapp.com mcsv.net asana.com kijiji.ca communications.bestbuypromotions.ca eastlink.ca)
 
 ## Usage ##
 # ./plesk_add_to_greylist_whitelist.sh
