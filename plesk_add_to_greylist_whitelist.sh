@@ -25,6 +25,6 @@ WHITELIST=$(sed '/^ *#/d;s/#.*//' $WHITELIST_FILE)
 IFS=$'\n' # make newlines the only separator (ignore spaces)
 for line in $WHITELIST; do
   echo -Adding $line to Plesk greylisting whitelist
-  plesk bin grey_listing --update-server -domains-whitelist add:*${line}
+  plesk bin grey_listing --update-server -domains-whitelist add:*.${line}
 done
 
