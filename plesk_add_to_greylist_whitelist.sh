@@ -12,8 +12,9 @@ CUSTOM_DOMAINS=(mcsv.net asana.com kijiji.ca communications.bestbuypromotions.ca
 # ./plesk_add_to_greylist_whitelist.sh
 
 ## Examples ##
-# Email Address: /usr/local/psa/bin/grey_listing --update-server -whitelist add:*@domain.tld
-# Server Domain: /usr/local/psa/bin/grey_listing --update-server -domains-whitelist add:MAILPPPPT02.example-mail.com #server name
+# Email Address: plesk bin grey_listing --update-server -whitelist add:*@domain.tld
+# Server Domain: plesk bin grey_listing --update-server -domains-whitelist add:MAILPPPPT02.example-mail.com #server name
+# List Whitelist: plesk bin grey_listing --info-server
 
 WHITELIST_FILE=./combined_rspamd_domains
 # Get whitelist file
