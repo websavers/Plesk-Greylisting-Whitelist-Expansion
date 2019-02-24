@@ -12,6 +12,10 @@ You probably want to edit the first domain entry at the top of the custom_domain
 file such that websavers.ca is replaced with the domain your SMTP server(s) use. 
 Then run: `./plesk_add_to_greylist_whitelist.sh`
 
+Note: As long as the domain syntax doesn't change when running `plesk bin grey_listing`
+then you can run this script repeatedly and Plesk will only add new records.
+(As, for example, `*.websavers.ca` is different from `*websavers.ca`)
+
 # Customization
 You may wish to customize by adding your own entries to the whitelist. We analyze
 our server mail logs for 451 errors like this: `grep "451 4.7.1" /var/log/maillog | more`
