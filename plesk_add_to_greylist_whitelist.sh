@@ -3,11 +3,6 @@
 ## Usage ##
 # ./plesk_add_to_greylist_whitelist.sh
 
-## Examples ##
-# Email Address: plesk bin grey_listing --update-server -whitelist add:*@domain.tld
-# Server Domain: plesk bin grey_listing --update-server -domains-whitelist add:MAILPPPPT02.example-mail.com #server name
-# List Whitelist: plesk bin grey_listing --info-server
-
 CUSTOM_WHITELIST_FILE=./custom_domains
 PUBLIC_WHITELIST_FILE=./combined_rspamd_domains
 

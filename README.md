@@ -34,6 +34,8 @@ file will be retrieved with `wget` and used instead.
 - curl
  
 # Reference
-- Docs: https://support.plesk.com/hc/en-us/articles/213394809-How-to-configure-Greylisting-
-- Syntax Ref: https://support.plesk.com/hc/en-us/articles/214028429-Greylisting-defers-all-emails-from-Office-365-accounts
 - Public Whitelist: https://whitelist.maven-group.org/
+- Plesk Greylisting Docs: https://support.plesk.com/hc/en-us/articles/213394809-How-to-configure-Greylisting-
+- Plesk Syntax Ref: https://support.plesk.com/hc/en-us/articles/214028429-Greylisting-defers-all-emails-from-Office-365-accounts
+- Add entry to whitelist: `plesk bin grey_listing --update-server -domains-whitelist add:MAILPPPPT02.example-mail.com`
+- List current whitelist entries: `plesk bin grey_listing --info-server`
