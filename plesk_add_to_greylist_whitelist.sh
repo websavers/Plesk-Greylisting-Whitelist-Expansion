@@ -15,7 +15,7 @@ PUBLIC_WHITELIST_FILE=./combined_rspamd_domains
 if [ ! -f $PUBLIC_WHITELIST_FILE ]; then
   curl -O https://whitelist.maven-group.org/lists/combined_rspamd_domains
 fi
-# Get public whitelist file
+# Get local/custom whitelist file
 if [ ! -f $CUSTOM_WHITELIST_FILE ]; then
   curl -O https://raw.githubusercontent.com/websavers/Plesk-Greylisting-Whitelist-Expansion/master/custom_domains
 fi
