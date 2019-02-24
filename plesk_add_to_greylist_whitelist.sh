@@ -1,10 +1,5 @@
 #!/bin/bash
 
-MY_DOMAIN="websavers.ca"
-#MailChimp: mail249.sea81.mcsv.net
-#Eastlink: mta03.eastlink.ca
-CUSTOM_DOMAINS=(mandrillapp.com mcsv.net asana.com kijiji.ca communications.bestbuypromotions.ca eastlink.ca)
-
 ## Usage ##
 # ./plesk_add_to_greylist_whitelist.sh
 
@@ -13,24 +8,33 @@ CUSTOM_DOMAINS=(mandrillapp.com mcsv.net asana.com kijiji.ca communications.best
 # Server Domain: plesk bin grey_listing --update-server -domains-whitelist add:MAILPPPPT02.example-mail.com #server name
 # List Whitelist: plesk bin grey_listing --info-server
 
-WHITELIST_FILE=./combined_rspamd_domains
-# Get whitelist file
-if [ ! -f $WHITELIST_FILE ]; then
+CUSTOM_WHITELIST_FILE=./custom_domains
+PUBLIC_WHITELIST_FILE=./combined_rspamd_domains
+
+# Get public whitelist file
+if [ ! -f $PUBLIC_WHITELIST_FILE ]; then
   curl -O https://whitelist.maven-group.org/lists/combined_rspamd_domains
 fi
-
-# Append our own custom white list entries to file
-for domain in ${CUSTOM_DOMAINS[@]}; do
-  echo ${domain} >> $WHITELIST_FILE 
-done
-echo $MY_DOMAIN >> $WHITELIST_FILE
+# Get public whitelist file
+if [ ! -f $CUSTOM_WHITELIST_FILE ]; then
+  curl -O https://raw.githubusercontent.com/websavers/Plesk-Greylisting-Whitelist-Expansion/master/custom_domains
+fi
 
 # Save non-comment lines of file to var
-WHITELIST=$(sed '/^ *#/d;s/#.*//' $WHITELIST_FILE)
+CUSTOM_WHITELIST=$(sed '/^ *#/d;s/#.*//' $CUSTOM_WHITELIST_FILE)
+PUBLIC_WHITELIST=$(sed '/^ *#/d;s/#.*//' $PUBLIC_WHITELIST_FILE)
+
+function add_to_plesk_whitelist{
+  DOMAIN=$1
+  echo -Adding $DOMAIN to Plesk greylisting whitelist
+  plesk bin grey_listing --update-server -domains-whitelist add:*.${DOMAIN}
+}
 
 IFS=$'\n' # make newlines the only separator (ignore spaces)
-for line in $WHITELIST; do
-  echo -Adding $line to Plesk greylisting whitelist
-  plesk bin grey_listing --update-server -domains-whitelist add:*.${line}
+for domain in $PUBLIC_WHITELIST; do
+  add_to_plesk_whitelist $domain
+done
+for domain in $CUSTOM_WHITELIST; do
+  add_to_plesk_whitelist $domain
 done
 
