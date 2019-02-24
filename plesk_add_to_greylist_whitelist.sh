@@ -26,7 +26,7 @@ PUBLIC_WHITELIST=$(sed '/^ *#/d;s/#.*//' $PUBLIC_WHITELIST_FILE)
 
 function add_to_plesk_whitelist{
   DOMAIN=$1
-  echo -Adding $DOMAIN to Plesk greylisting whitelist
+  echo -Adding ${DOMAIN} to Plesk greylisting whitelist
   plesk bin grey_listing --update-server -domains-whitelist add:*.${DOMAIN}
 }
 
