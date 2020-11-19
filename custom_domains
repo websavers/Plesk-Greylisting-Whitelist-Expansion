@@ -7,10 +7,9 @@ asana.com
 eventbrite.com
 linkedin.com
 promote.weebly.com
-mx1.slc.paypal.com
-mx2.slc.paypal.com
 
 # Mailers
+amazonses.com
 mailchimp.com
 mcsv.net #MailChimp 2
 mailgun.org
@@ -22,13 +21,14 @@ hostedemail.com
 sendgrid.net
 relay.mailchannels.net
 
-# Retail
+# Retail & Payments
 email.oldnavy.com
 em.target.com
 email.lechateau.com
 shopify.com
+slc.paypal.com
 
-# Canada
+# Canada Specific
 services.gc.ca
 email.oldnavy.ca
 kijiji.ca
