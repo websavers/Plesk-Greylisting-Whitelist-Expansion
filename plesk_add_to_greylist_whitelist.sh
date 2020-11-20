@@ -39,3 +39,4 @@ for domain in $CUSTOM_WHITELIST; do
   add_to_plesk_whitelist $domain
 done
 
+rm -rf custom_domains combined_rspamd_domains
