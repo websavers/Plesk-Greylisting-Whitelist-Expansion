@@ -19,10 +19,16 @@ fi
 CUSTOM_WHITELIST=$(sed '/^ *#/d;s/#.*//' $CUSTOM_WHITELIST_FILE)
 PUBLIC_WHITELIST=$(sed '/^ *#/d;s/#.*//' $PUBLIC_WHITELIST_FILE)
 
+EXISTING_CONFIG=$(plesk bin grey_listing --info-server)
+
 function add_to_plesk_whitelist {
   local DOMAIN=$1
-  echo -Adding ${DOMAIN} to Plesk greylisting whitelist
-  plesk bin grey_listing --update-server -domains-whitelist add:*.${DOMAIN}
+  if [[ $EXISTING_CONFIG = *$DOMAIN* ]]; then
+    echo -Skipping ${DOMAIN}: already in whitelist
+  else
+    echo -Adding ${DOMAIN} to Plesk greylisting whitelist
+    plesk bin grey_listing --update-server -domains-whitelist add:*.${DOMAIN}
+  fi
 }
 
 IFS=$'\n' # make newlines the only separator (ignore spaces)
