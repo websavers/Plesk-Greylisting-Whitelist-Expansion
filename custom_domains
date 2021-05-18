@@ -1,7 +1,11 @@
+##
 # My Domain
+##
 websavers.ca
 
+##
 # Web Services
+##
 facebook.com
 asana.com
 eventbrite.com
@@ -10,10 +14,13 @@ promote.weebly.com
 sg.zoom.us
 hubspotemail.net
 
+##
 # Mailers
+##
 amazonses.com
 mailchimp.com
-mcsv.net #MailChimp 2
+#MailChimp 2
+mcsv.net
 mailgun.org
 mailgun.info
 mailgun.us
@@ -26,8 +33,12 @@ relay.mailchannels.net
 me.com
 icloud.com
 sparkpostmail.com
+#ProofPoint
+pphosted.com
 
+##
 # Retail & Payments
+##
 email.oldnavy.com
 em.target.com
 email.lechateau.com
@@ -35,7 +46,9 @@ shopify.com
 slc.paypal.com
 email.sysco.com
 
+##
 # Canada Specific
+##
 services.gc.ca
 email.oldnavy.ca
 kijiji.ca
