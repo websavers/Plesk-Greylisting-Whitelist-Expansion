@@ -22,10 +22,6 @@ our server mail logs for 451 errors like this: `grep "451 4.7.1" /var/log/maillo
 And use the results to find common legit mail servers to whitelist by adding to 
 the custom_domains file. If you don't use that custom_domains file, our default
 file will be retrieved with `wget` and used instead.
-
-# Changelog
- - [2019-02-24] Added a bunch of newly detected mailers and moved CUSTOM_DOMAINS var to its own file: custom_domains. Readme improvements.
- - [2019-02-22] Initial version
  
 # Requirements
 - Plesk Onyx 17.x minimum (might work with Plesk 12.5. Untested.)
