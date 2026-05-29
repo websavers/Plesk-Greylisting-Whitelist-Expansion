@@ -23,9 +23,6 @@ docusign.net
 ##
 amazonses.com
 enom.com
-mailchimp.com
-#MailChimp 2
-mcsv.net
 mailgun.org
 mailgun.info
 mailgun.us
@@ -40,23 +37,28 @@ icloud.com
 sparkpostmail.com
 cloudfilter.net
 megamailservers.com
-#ProofPoint
-pphosted.com
 constantcontact.com
 antispamcloud.com
 btinternet.com
 shared.klaviyomail.com
 mail.ne1.yahoo.com
 mta.salesforce.com
-#Zoho
 zoho.com
 zoho.eu
 zohocrm.com
 transmail.net
+hecticapp.com
+pandadoc.net
+
 #MailerLite
 mailersend.net
-#HecticApp
-hecticapp.com
+
+#ProofPoint
+pphosted.com
+
+#MailChimp
+mcsv.net
+mailchimp.com
 
 ##
 # Retail & Payments
