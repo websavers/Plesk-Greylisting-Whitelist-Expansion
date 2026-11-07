@@ -24,10 +24,16 @@ EXISTING_CONFIG=$(plesk bin grey_listing --info-server)
 function add_to_plesk_whitelist {
   local DOMAIN=$1
   if [[ $EXISTING_CONFIG = *$DOMAIN* ]]; then
-    echo -Skipping ${DOMAIN}: already in whitelist
+    echo "-Skipping $DOMAIN: already in whitelist"
   else
-    echo -Adding ${DOMAIN} to Plesk greylisting whitelist
-    plesk bin grey_listing --update-server -domains-whitelist add:*.${DOMAIN}
+    # Validate domain name
+    validate="^([a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]\.)+[a-zA-Z]{2,}$"
+    if [[ "$DOMAIN" =~ $validate ]]; then
+      echo "-Adding $DOMAIN to Plesk greylisting whitelist"
+      plesk bin grey_listing --update-server -domains-whitelist add:*.${DOMAIN}
+    else
+        echo "Not valid domain name: $DOMAIN"
+    fi
   fi
 }
 
